@@ -1,10 +1,3 @@
-// module.exports = {
-//   entry: './src/app.js',
-//   output: {
-//     filename: './dist/app.bundle.js'
-//   }
-// }
-
 const webpack = require('webpack');
 const path = require('path');
 
@@ -22,7 +15,11 @@ const config = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: 'babel-loader'
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
       }
     ]
   },
